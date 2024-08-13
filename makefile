@@ -20,8 +20,7 @@ venv:
 setup: venv
 		 $(PIP) install --upgrade pip
 test: dev dev_setup
-		# $(DEV_VENV_DIR)/bin/python3 -m unittest discover -v
-		./run_tests.sh
+		$(DEV_VENV_DIR)/bin/python3 -m unittest discover -v
 clean:
 		rm -rf $(VENV_NAME)
 		rm -rf $(DEV_VENV_DIR)
