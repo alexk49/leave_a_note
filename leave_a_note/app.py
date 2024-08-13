@@ -1,6 +1,6 @@
 import os
 
-from bottle import route, run, template, static_file, TEMPLATE_PATH, SimpleTemplate, default_app
+from bottle import route, run, template, static_file, TEMPLATE_PATH, default_app
 
 
 abs_app_dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -22,7 +22,6 @@ def main():
     TEMPLATE_PATH.insert(0, abs_views_path)
 
     app = default_app()
-    # SimpleTemplate.defaults["get_url"] = app.get_url
     app.run(host="localhost", port=8080, debug=True, reloader=True)
 
 
