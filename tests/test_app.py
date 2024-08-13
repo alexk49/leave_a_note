@@ -4,11 +4,11 @@ from urllib import request
 from leave_a_note import app
 
 
-class MyTestApp(unittest.TestCase):
+class TestApp(unittest.TestCase):
     def setUp(self):
         # tests run on localhost server
         # which is set up from makefile
-        self.app_root = "http://localhost:8080/"
+        self.app_root = "http://localhost:8080"
 
     def test_home_page_response(self):
         """Testing webpage response code"""
