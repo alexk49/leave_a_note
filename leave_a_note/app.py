@@ -17,6 +17,11 @@ def index():
 
 @route("/static/<filename:path>")
 def server_static(filename):
+    """
+    Required to load all static files
+    Absolute dir path is used to handle app
+    being loaded from project root
+    """
     return static_file(filename, root=os.path.join(abs_app_dir_path, "static"))
 
 
