@@ -9,6 +9,12 @@
   <body>
     <h1>Leave a note</h1>
     <p>Leave a note for yourself or the next person!</p>
+    <div id="container">
+    <div id="note">
+        <div id="top-border"></div>
+        <div id="main-note"></div>
+    </div>
+    </div>
   </body>
     <script src="/static/scripts.js"></script>
 </html>

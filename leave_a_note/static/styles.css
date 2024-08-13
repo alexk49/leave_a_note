@@ -1,3 +1,20 @@
-* {
+h1,
+p {
   text-align: center;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+#note {
+  border: solid black;
+  width: 400px;
+  height: 300px;
+}
+
+#top-border {
+  border-bottom: solid;
+  height: 30px;
 }
