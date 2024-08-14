@@ -18,8 +18,8 @@
         </div>
     </div>
     <div id="note-buttons">
-    <input type="submit" class="note-button" id="submitButton" value="Submit">
-    <input type="reset" class="note-button" id="resetButton" value="Reset">
+    <input type="submit" class="note-button" id="submit-button" value="Submit">
+    <input type="reset" class="note-button" id="reset-button" value="Reset">
     </div>
     </form>
     </div>
