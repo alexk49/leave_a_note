@@ -1,5 +1,3 @@
 .dev-venv
-dev-requirements.txt
 .venv
-requirements.txt
 __pycache__

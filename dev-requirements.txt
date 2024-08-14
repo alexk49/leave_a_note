@@ -1,0 +1,6 @@
+beautifulsoup4==4.12.3
+bottle==0.12.25
+soupsieve==2.6
+waitress==3.0.0
+WebOb==1.8.8
+WebTest==3.0.0
