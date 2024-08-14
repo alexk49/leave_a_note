@@ -12,8 +12,16 @@
     <div id="container">
     <div id="note">
         <div id="top-border"></div>
-        <div id="main-note"></div>
+        <div id="main-note">
+        <form action="/submit" method="POST">
+        <input id="note-text" type="text">
+        </div>
     </div>
+    <div id="note-buttons">
+    <input type="submit" class="note-button" id="submitButton" value="Submit">
+    <input type="reset" class="note-button" id="resetButton" value="Reset">
+    </div>
+    </form>
     </div>
   </body>
     <script src="/static/scripts.js"></script>

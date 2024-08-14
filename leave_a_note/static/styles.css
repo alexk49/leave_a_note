@@ -3,18 +3,47 @@ p {
   text-align: center;
 }
 
+body {
+  height: 100vh; /* Use the full height of the viewport */
+  margin: 0;
+}
+
 #container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 #note {
   border: solid black;
   width: 400px;
   height: 300px;
+  margin: 0 auto;
 }
 
 #top-border {
   border-bottom: solid;
   height: 30px;
+}
+
+#note-text {
+  margin: 0;
+  display: block;
+  width: 395px;
+  height: 265px;
+  border: none;
+}
+
+#note-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.note-button {
+  padding: 5px;
+  margin: 5px;
 }
