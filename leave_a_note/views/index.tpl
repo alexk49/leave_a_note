@@ -10,19 +10,29 @@
     <h1>Leave a note</h1>
     <p>Leave a note for yourself or the next person!</p>
     <div id="container">
-    <div id="note">
-        <div id="top-border"></div>
-        <div id="main-note">
-        <form action="/submit" method="POST">
-        <input id="note-text" type="text">
+      <form action="/submit" method="POST">
+        <div id="note">
+          <div id="top-border"></div>
+          <div id="main-note">
+            <textarea id="note-text" type="text" maxlength="350"></textarea>
+          </div>
         </div>
-    </div>
-    <div id="note-buttons">
-    <input type="submit" class="note-button" id="submit-button" value="Submit">
-    <input type="reset" class="note-button" id="reset-button" value="Reset">
-    </div>
-    </form>
+        <div id="note-buttons">
+          <input
+            type="submit"
+            class="note-button"
+            id="submit-button"
+            value="Submit"
+          />
+          <input
+            type="reset"
+            class="note-button"
+            id="reset-button"
+            value="Reset"
+          />
+        </div>
+      </form>
     </div>
   </body>
-    <script src="/static/scripts.js"></script>
+  <script src="/static/scripts.js"></script>
 </html>

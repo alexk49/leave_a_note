@@ -28,11 +28,24 @@ body {
 }
 
 #note-text {
-  margin: 0;
   display: block;
   width: 395px;
   height: 265px;
   border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.5;
+  font-size: 16px;
+  outline: none; /* disable blue selection border */
+}
+
+#note,
+#top-border,
+#note-text {
+  background-color: #eff9c3;
 }
 
 #note-buttons {
@@ -46,4 +59,8 @@ body {
 .note-button {
   padding: 5px;
   margin: 5px;
+}
+
+#counter {
+  justify-content: flex-end;
 }
