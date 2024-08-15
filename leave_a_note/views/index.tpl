@@ -30,6 +30,7 @@
             id="reset-button"
             value="Reset"
           />
+          <div id="counter">0/350</div>
         </div>
       </form>
     </div>
