@@ -19,15 +19,15 @@ body {
 }
 
 #notes-container {
-  text-align: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .note {
   border: solid black;
   width: 400px;
   height: 300px;
-  margin: 0 auto;
+  margin: 8px auto;
 }
 
 .top-border {
