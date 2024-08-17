@@ -49,7 +49,7 @@ def get_notes():
     connection = sqlite3.connect(DB_PATH)
     cursor = connection.cursor()
     cursor.execute(
-        """SELECT * FROM 'notes'""",
+        """SELECT * FROM 'notes' ORDER BY timestamp DESC""",
     )
     notes = cursor.fetchall()
     connection.close()
