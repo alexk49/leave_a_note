@@ -83,3 +83,20 @@ class MyTestApp(unittest.TestCase):
 
         assert response.status_code == 200
         assert response.status == "200 OK"
+
+    def test_add_note(self):
+        """Test add_note function adds note to given db"""
+
+        result = app.add_note("test note", self.test_db_path)
+
+        assert result is True
+
+        connection = sqlite3.connect(self.test_db_path)
+        cursor = connection.cursor()
+        cursor.execute(
+            """SELECT * FROM "notes" WHERE note LIKE 'test note'""",
+        )
+        query = cursor.fetchall()
+        assert len(query) == 1
+        assert query[0][2] == "test note"
+        connection.close()

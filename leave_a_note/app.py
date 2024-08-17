@@ -25,6 +25,7 @@ def index():
 
 @route("/submit", method="POST")
 def submit():
+    """Called when the note form is submitted"""
     note_text = request.forms.get("note-text")
 
     # handle empty or faulty notes
@@ -88,10 +89,9 @@ def add_note(note_text: str, db_path: str) -> bool:
 
 
 def main():
+    check_database_exists(DB_DIR_PATH, DB_PATH)
     # ensure templates path is still findable when app is run from project root
     app.run(host="localhost", port=8080, debug=True, reloader=True)
-
-    check_database_exists(DB_DIR_PATH, DB_PATH)
 
 
 if __name__ == "__main__":
