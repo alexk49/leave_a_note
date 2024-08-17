@@ -67,7 +67,7 @@ class MyTestApp(unittest.TestCase):
         response.mustcontain("<html")
 
     def test_submit_page_response(self):
-        """should only be accessible via POST"""
+        """Submit page should only be accessible via POST"""
         response = self.test_server.get("/submit", expect_errors=True)
         assert response.status_code == 405
         assert response.status == "405 Method Not Allowed"
@@ -83,6 +83,17 @@ class MyTestApp(unittest.TestCase):
 
         assert response.status_code == 200
         assert response.status == "200 OK"
+
+    def test_notes_page(self):
+        """Test response and display of notes page"""
+        response = self.test_server.get("/notes")
+
+        assert response.status_code == 200
+        assert response.status == "200 OK"
+
+        response.mustcontain("<html")
+        # if id loaded then db query has worked
+        response.mustcontain('id="note-1"')
 
     def test_add_note(self):
         """Test add_note function adds note to given db"""
