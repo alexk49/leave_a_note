@@ -2,7 +2,7 @@ import os
 import logging
 import sqlite3
 
-from bottle import request, route, run, template, static_file, TEMPLATE_PATH, default_app
+from bottle import request, route, run, template, static_file, TEMPLATE_PATH, default_app, redirect
 
 logging.basicConfig(level=logging.INFO, format=" %(asctime)s -  %(levelname)s -  %(message)s")
 
@@ -33,7 +33,7 @@ def submit():
         return template("index")
 
     if add_note(note_text, DB_PATH):
-        return "Thank you for submitting your note"
+        return redirect("/notes")
     else:
         return "that went wrong..."
 
