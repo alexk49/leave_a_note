@@ -9,12 +9,12 @@
   <body>
     <h1>Leave a note</h1>
     <p>Leave a note for yourself or the next person!</p>
-    <div id="container">
+    <div id="new-note-container" class="container">
       <form action="/submit" method="POST">
-        <div id="note">
-          <div id="top-border"></div>
-          <div id="main-note">
-            <textarea id="note-text" name="note-text" type="text" maxlength="350"></textarea>
+        <div id="note" class="note">
+          <div id="top-border" class="top-border"></div>
+          <div id="main-note" class="main-note">
+            <textarea id="note-text" class="note-text" name="note-text" type="text" maxlength="350"></textarea>
           </div>
         </div>
         <div id="note-buttons">

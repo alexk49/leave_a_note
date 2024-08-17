@@ -8,27 +8,44 @@ body {
   margin: 0;
 }
 
-#container {
+.container {
   display: flex;
+}
+
+#new-note-container {
   justify-content: center;
   flex-direction: column;
   text-align: center;
 }
 
-#note {
+#notes-container {
+  text-align: center;
+  justify-content: space-around;
+}
+
+.note {
   border: solid black;
   width: 400px;
   height: 300px;
   margin: 0 auto;
 }
 
-#top-border {
+.top-border {
   border-bottom: solid;
-  height: 30px;
+  height: 18px;
+  text-align: right;
+  padding: 2px;
 }
 
-#note-text {
-  display: block;
+.main-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.note-text {
+  display: flex;
   width: 395px;
   height: 265px;
   border: none;
@@ -40,11 +57,19 @@ body {
   line-height: 1.5;
   font-size: 16px;
   outline: none; /* disable blue selection border */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-#note,
-#top-border,
-#note-text {
+#note-buttons,
+.note-text {
+  width: 395px;
+}
+
+.note,
+.top-border,
+.note-text {
   background-color: #eff9c3;
 }
 
@@ -54,7 +79,6 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 395px;
   padding: 10px;
 }
 

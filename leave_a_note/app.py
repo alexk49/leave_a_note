@@ -38,6 +38,19 @@ def submit():
         return "that went wrong..."
 
 
+@route("/notes", method="GET")
+def get_notes():
+    """Called for notes page, which shows all notes"""
+    connection = sqlite3.connect(DB_PATH)
+    cursor = connection.cursor()
+    cursor.execute(
+        """SELECT * FROM 'notes'""",
+    )
+    notes = cursor.fetchall()
+    connection.close()
+    return template("notes", notes=notes)
+
+
 @route("/static/<filename:path>")
 def server_static(filename: str):
     """
