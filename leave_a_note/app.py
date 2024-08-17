@@ -23,6 +23,11 @@ def index():
     return template("index")
 
 
+@route("/new")
+def index():
+    return template("new")
+
+
 @route("/submit", method="POST")
 def submit():
     """Called when the note form is submitted"""

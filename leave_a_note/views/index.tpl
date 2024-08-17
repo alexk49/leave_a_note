@@ -1,39 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Leave a note</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/static/styles.css" rel="stylesheet" />
-  </head>
+% include('header.tpl', title="Leave a note")
   <body>
     <h1>Leave a note</h1>
     <p>Leave a note for yourself or the next person!</p>
-    <div id="new-note-container" class="container">
-      <form action="/submit" method="POST">
-        <div id="note" class="note">
-          <div id="top-border" class="top-border"></div>
-          <div id="main-note" class="main-note">
-            <textarea id="note-text" class="note-text" name="note-text" type="text" maxlength="350"></textarea>
-          </div>
-        </div>
-        <div id="note-buttons">
-          <input
-            type="submit"
-            class="note-button"
-            id="submit-button"
-            value="Submit"
-          />
-          <input
-            type="reset"
-            class="note-button"
-            id="reset-button"
-            value="Reset"
-          />
-          <div id="counter">0/350</div>
-        </div>
-      </form>
+    <div id="button-container" class="container">
+    <a class="link-button" href="/new"><b>New note</b></a>
+    <a class="link-button" href="/notes"><b>View notes</b></a>
     </div>
   </body>
-  <script src="/static/scripts.js"></script>
-</html>
+% include("footer.tpl")

@@ -1,11 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Leave a note - notes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/static/styles.css" rel="stylesheet" />
-  </head>
+% include('header.tpl', title="Notes")
   <body>
     <h1>Notes</h1>
     <div id="notes-container" class="container">
@@ -19,5 +12,4 @@
     %end
     </div>
   </body>
-  <script src="/static/scripts.js"></script>
-</html>
+% include("footer.tpl")
