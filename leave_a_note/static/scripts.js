@@ -13,7 +13,11 @@ function textCounter () {
 }
 
 const noteText = document.getElementById('note-text')
-noteText.addEventListener('input', textCounter)
+if (noteText != null) {
+  noteText.addEventListener('input', textCounter)
+}
 
 const resetButton = document.getElementById('reset-button')
-resetButton.addEventListener('click', clearNote)
+if (resetButton != null) {
+  resetButton.addEventListener('click', clearNote)
+}
