@@ -14,7 +14,7 @@
         <div id="note">
           <div id="top-border"></div>
           <div id="main-note">
-            <textarea id="note-text" type="text" maxlength="350"></textarea>
+            <textarea id="note-text" name="note-text" type="text" maxlength="350"></textarea>
           </div>
         </div>
         <div id="note-buttons">

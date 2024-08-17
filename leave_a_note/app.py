@@ -2,9 +2,11 @@ import os
 import logging
 import sqlite3
 
-from bottle import route, run, template, static_file, TEMPLATE_PATH, default_app
+from bottle import request, route, run, template, static_file, TEMPLATE_PATH, default_app
 
 logging.basicConfig(level=logging.INFO, format=" %(asctime)s -  %(levelname)s -  %(message)s")
+
+""" set paths """
 
 abs_app_dir_path = os.path.dirname(os.path.realpath(__file__))
 abs_views_path = os.path.join(abs_app_dir_path, "views")
@@ -19,6 +21,20 @@ DB_PATH = os.path.join(abs_app_dir_path, "data", "notes.db")
 @route("/")
 def index():
     return template("index")
+
+
+@route("/submit", method="POST")
+def submit():
+    note_text = request.forms.get("note-text")
+
+    # handle empty or faulty notes
+    if len(note_text) == 0 or note_text.isspace():
+        return template("index")
+
+    if add_note(note_text, DB_PATH):
+        return "Thank you for submitting your note"
+    else:
+        return "that went wrong..."
 
 
 @route("/static/<filename:path>")
@@ -50,6 +66,25 @@ def create_new_database(db_path: str):
     )
     connection.commit()
     connection.close()
+
+
+def add_note(note_text: str, db_path: str) -> bool:
+    """Used to write note_text to the database"""
+    logging.info("writing note to db: %s", note_text)
+
+    try:
+        connection = sqlite3.connect(db_path)
+        cursor = connection.cursor()
+        cursor.execute(
+            """INSERT INTO "notes" (note) VALUES (?)""",
+            (note_text,),
+        )
+        connection.commit()
+        connection.close()
+        return True
+    except Exception as err:
+        logging.critical("error writing %s to database: %s", note_text, err)
+        return False
 
 
 def main():
