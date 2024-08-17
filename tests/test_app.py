@@ -66,6 +66,12 @@ class MyTestApp(unittest.TestCase):
         response.mustcontain("<h1>Leave a note</h1>")
         response.mustcontain("<html")
 
+    def test_submit_page_response(self):
+        """should only be accessible via POST"""
+        response = self.test_server.get("/submit", expect_errors=True)
+        assert response.status_code == 405
+        assert response.status == "405 Method Not Allowed"
+
     def test_static_files(self):
         """Test static files exist and can be found"""
         response = self.test_server.get("/static/styles.css")
