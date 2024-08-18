@@ -95,6 +95,16 @@ class MyTestApp(unittest.TestCase):
         # if id loaded then db query has worked
         response.mustcontain('id="note-1"')
 
+    def test_new_note_page(self):
+        """Test new note page loads"""
+        response = self.test_server.get("/new")
+
+        assert response.status_code == 200
+        assert response.status == "200 OK"
+
+        response.mustcontain("<html")
+        response.mustcontain('id="new-note-container"')
+
     def test_add_note(self):
         """Test add_note function adds note to given db"""
 
