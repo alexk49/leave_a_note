@@ -24,7 +24,7 @@ def index():
 
 
 @route("/new")
-def index():
+def new_note_page():
     return template("new")
 
 
