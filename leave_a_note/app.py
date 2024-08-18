@@ -35,12 +35,10 @@ def submit():
 
     # handle empty or faulty notes
     if len(note_text) == 0 or note_text.isspace():
-        return template("index")
+        return redirect("/new")
 
     if add_note(note_text, DB_PATH):
         return redirect("/notes")
-    else:
-        return "that went wrong..."
 
 
 @route("/notes", method="GET")
